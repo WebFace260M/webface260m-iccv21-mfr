@@ -40,6 +40,20 @@ In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-reti
 1. Participants should put all models and files into ``$MFR_ROOT/assets/``.
 2. Participants must provide ``$MFR_ROOT/pywebface260mmfr_implement.py`` which contains the ``PyWebFace260M`` class.  
 3. Participants should run the ``demo_feat.py`` in ``$MFR_ROOT/demo/``  on the provided docker file to ensure the correctness of feature and time constraints.  
-4. Participants must package the code directory for submission using ``zip -r xxx.zip $MFR_ROOT`` and then upload it to [codalab](https://competitions.codalab.org/competitions/32478).  
-5. Please sign-up with the real organization name. You can hide the organization name in our system if you like.  
-6. You can decide which submission to be displayed on the leaderboard.
+4. Participants must package the code directory for submission using ``zip -r xxx.zip $MFR_ROOT`` and then upload it to [codalab](https://competitions.codalab.org/competitions/32478).  An example directory when unzip the submission zip file:
+```Shell
+(base) [mfr_submit_code]$ tree
+.
+├── assets
+│   ├── det
+│   │   └── R50-retinaface.onnx
+│   └── face_reg
+│       ├── r18a.onnx
+│       └── R50-arcface.onnx
+├── face_detection.py
+└── pywebface260mmfr_implement.py
+
+3 directories, 5 files
+```
+6. Please sign-up with the real organization name. You can hide the organization name in our system if you like.  
+7. You can decide which submission to be displayed on the leaderboard.
