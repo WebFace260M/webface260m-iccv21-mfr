@@ -17,7 +17,11 @@ git clone https://github.com/WebFace260M/webface260m-iccv21-mfr.git
 docker pull webface260m/mfr:latest
 docker run -it -v /mnt/:/mnt/ --name mfr webface260m/mfr /bin/bash
 ```
-3. Run the demo code
+3. (Optional) If you do not run step 2, you can also run the following command to install the necessary packages.
+```Shell
+pip install -r requirements.txt
+```
+5. Run the demo code
 ```Shell
 cd $MFR_ROOT/demo
 python demo_feat.py
