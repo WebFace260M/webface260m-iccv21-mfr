@@ -12,8 +12,11 @@ There're [InsightFace track](https://github.com/deepinsight/insightface/tree/mas
 ```Shell
 git clone https://github.com/WebFace260M/webface260m-iccv21-mfr.git
 ```
-2. Download the model files from [BaiduYun](https://pan.baidu.com/s/1Zd62dC0rVBLlc2Drspi0ow)[extraction code: ``5pig``] or [Dropbox]
-
+2. Download the model files from [BaiduYun](https://pan.baidu.com/s/1Zd62dC0rVBLlc2Drspi0ow)[extraction code: ``5pig``] or [Dropbox] and unzip.
+```Shell
+cd $MFR_ROOT/demo
+unzip assets.zip
+```
 4. Pull the docker file and open it
 ```Shell
 docker pull webface260m/mfr:latest
