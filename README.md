@@ -5,6 +5,8 @@ The Masked Face Recognition Challenge & Workshop(MFR) will be held in conjunctio
 
 [Workshop-Homepage](https://ibug.doc.ic.ac.uk/resources/masked-face-recognition-challenge-workshop-iccv-21/).
 
+Submission server link: https://competitions.codalab.org/competitions/32478
+
 There're [InsightFace track](https://github.com/deepinsight/insightface/tree/master/challenges/iccv21-mfr) and Webface260M track(with larger training set) here in this workshop.
 
 ### Inference demo
