@@ -1,0 +1,13 @@
+numpy
+
+opencv-python
+
+scikit-image
+
+onnxruntime
+
+onnx
+
+sklearn
+
+xpinyin
