@@ -32,7 +32,7 @@ docker run -it -v /mnt/:/mnt/ --name mfr webface260m/mfr /bin/bash
 ```
 4. (Optional) If you do not run ``step 3``, you can also run the following command to install the necessary packages.
 ```Shell
-cd $MFR_ROOT/demo
+cd $MFR_ROOT
 pip install -r requirements.txt
 ```
 5. Run the demo code
