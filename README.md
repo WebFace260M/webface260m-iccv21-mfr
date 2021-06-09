@@ -34,7 +34,7 @@ pip install -r requirements.txt
 cd $MFR_ROOT/demo
 python demo_feat.py
 ```
-In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-retinaface.onnx``) and a face recognition model (``$MFR_ROOT/assets/face_reg/R18.onnx``). Participants should replace them with the models trained by themselves for submission to [codalab](https://competitions.codalab.org/competitions/32478).
+In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-retinaface.onnx``) and a face recognition model (``$MFR_ROOT/assets/face_reg/R18.onnx``). Participants should replace them with the models trained by themselves and modify the model name in https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/797f0f68758709323a2c77e61fe991e76bc5f156/pywebface260mmfr_implement.py#L54 and https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/797f0f68758709323a2c77e61fe991e76bc5f156/pywebface260mmfr_implement.py#L61 accordingly, for submission to [codalab](https://competitions.codalab.org/competitions/32478).
 
 ### Submission Guide
 1. Participants should put all models and files into ``$MFR_ROOT/assets/``.
