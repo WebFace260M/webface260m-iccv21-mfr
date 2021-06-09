@@ -34,7 +34,8 @@ pip install -r requirements.txt
 cd $MFR_ROOT/demo
 python demo_feat.py
 ```
-In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-retinaface.onnx``) and a face recognition model (``$MFR_ROOT/assets/face_reg/R18.onnx``). Participants should replace them with the models trained by themselves and modify the model name in ``pywebface260mmfr_implement.py``
+### Important Notes
+1. In the above demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-retinaface.onnx``) and a face recognition model (``$MFR_ROOT/assets/face_reg/R18.onnx``). Participants should replace them with the models trained by themselves and modify the model name in [``pywebface260mmfr_implement.py``](https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/main/pywebface260mmfr_implement.py)
 ```Shell
     def load(self, rdir):
         det_model = os.path.join(rdir, 'det', 'R50-retinaface.onnx')
@@ -48,6 +49,8 @@ In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-reti
         print('use onnx-model:', self.model_file)
 ```
 accordingly, for submission to [codalab](https://competitions.codalab.org/competitions/32478).
+
+2. Participants must decide whether the value of ``input_mean`` and ``input_std`` in [``pywebface260mmfr_implement.py``](https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/main/pywebface260mmfr_implement.py) is right for their face recognition models. Generally, when the model have preprocessing steps in itself, it do not need any other operations (``input_mean = 0.0`` and ``input_std = 1.0``). Otherwise, it may be ``input_mean = 127.5`` and ``input_std = 127.5``. Participants must adjust the script accordingly.
 
 ### Submission Guide
 1. Participants should put all models and files into ``$MFR_ROOT/assets/``.
