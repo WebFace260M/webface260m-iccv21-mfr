@@ -10,7 +10,7 @@ Submission server link: https://competitions.codalab.org/competitions/32478
 There're [InsightFace track](https://github.com/deepinsight/insightface/tree/master/challenges/iccv21-mfr) and Webface260M track(with larger training set) here in this workshop.
 
 ## Recent Update
-**`2021-06-09`**: We provided a version which partly fixes the problem of ``input_mean`` and ``input_std``.
+**`2021-06-09`**: We provided a version which partly fixed the problem of ``input_mean`` and ``input_std``.
 
 **`2021-06-08`**: We released the submission package for [WebFace260M Track of ICCV21-MFR](https://www.face-benchmark.org/challenge.html).
 
