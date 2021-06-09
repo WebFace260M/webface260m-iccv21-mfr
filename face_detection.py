@@ -193,12 +193,13 @@ class FaceDetector:
         self.rac = rac
         self.default_image_size = (480, 640)
 
-    def prepare(self, use_gpu, nms=0.4, fix_image_size=None):
+    def prepare(self, use_gpu, nms=0.4, fix_image_size=None, ctx=0):
 
         self.nms_threshold = nms
 
         if use_gpu:
             self.ort_session = onnxruntime.InferenceSession(self.onnx_file)
+            self.ort_session.set_providers(['CUDAExecutionProvider'], [{'device_id': ctx}])
         else:
             sessionOptions = onnxruntime.SessionOptions()
             sessionOptions.intra_op_num_threads = 1

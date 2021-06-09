@@ -50,13 +50,14 @@ class PyWebFace260M:
 
         print("use_gpu: {}".format(use_gpu))
 
-    def load(self, rdir):
+    def load(self, rdir, ctx=0):
         det_model = os.path.join(rdir, 'det', 'R50-retinaface.onnx')
         self.detector = face_detection.get_retinaface(det_model)
         print('use onnx-model:', det_model)
 
-        self.detector.prepare(use_gpu=self.use_gpu)
+        self.detector.prepare(use_gpu=self.use_gpu, ctx=ctx)
         max_time_cost = 1000
+
 
         self.model_file = os.path.join(rdir, 'face_reg', "R18.onnx")
         print('use onnx-model:', self.model_file)
@@ -65,6 +66,7 @@ class PyWebFace260M:
 
         if self.use_gpu:
             session = onnxruntime.InferenceSession(self.model_file)
+            session.set_providers(['CUDAExecutionProvider'], [{'device_id': ctx}])
         else:
             sessionOptions = onnxruntime.SessionOptions()
             sessionOptions.intra_op_num_threads = 1
@@ -131,13 +133,9 @@ class PyWebFace260M:
             find_mul = False
             for nid, node in enumerate(graph.node[:8]):
                 print(nid, node.name)
-                # if node.name.startswith('Sub') or node.name.startswith('_minus'):
-                #     find_sub = True
-                # if node.name.startswith('Mul') or node.name.startswith('_mul'):
-                #     find_mul = True
-                if "_sub" in node.name or "_minus" in node.name:
+                if "sub" in node.name.lower() or "minus" in node.name.lower():
                     find_sub = True
-                if "_mul" in node.name:
+                if "mul" in node.name.lower() or "div" in node.name.lower():
                     find_mul = True
 
             print("find_sub {} find_mul {}".format(find_sub, find_mul))
