@@ -52,6 +52,7 @@ accordingly, for submission to [codalab](https://competitions.codalab.org/compet
 
 2. Participants must judge whether the value of ``input_mean`` and ``input_std`` in [``pywebface260mmfr_implement.py``](https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/main/pywebface260mmfr_implement.py) is right for their own face recognition models. Generally, when the model have preprocessing steps in itself, it do not need any other operations (``input_mean = 0.0`` and ``input_std = 1.0``). Otherwise, it may be ``input_mean = 127.5`` and ``input_std = 127.5``. Participants must adjust the script accordingly.
 3. Participants must compare the feature obtained by this repo with their own framework (``mxnet, pytorch``) by using one image, e.g. ``demo/0.png``, to make sure the feature are almost the same. Otherwise, there may be other issues.
+4. Participants must ensure 1000 ms constrain for whole face recognition system. At present, the submission exceeding 2000ms will not be evaluated.
 
 ### Submission Guide
 1. Participants should put all models and files into ``$MFR_ROOT/assets/``.
