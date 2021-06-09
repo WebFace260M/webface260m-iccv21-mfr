@@ -22,7 +22,7 @@ git clone https://github.com/WebFace260M/webface260m-iccv21-mfr.git
 ```
 2. Download the model files from [BaiduYun](https://pan.baidu.com/s/1Zd62dC0rVBLlc2Drspi0ow)[extraction code: ``5pig``] or [Dropbox](https://www.dropbox.com/s/cw52tmxgu1cboii/assets.zip?dl=0) and unzip.
 ```Shell
-cd $MFR_ROOT/demo
+cd $MFR_ROOT/
 unzip assets.zip
 ```
 3. Pull the docker file and open it
