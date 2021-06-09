@@ -19,12 +19,12 @@ git clone https://github.com/WebFace260M/webface260m-iccv21-mfr.git
 cd $MFR_ROOT/demo
 unzip assets.zip
 ```
-4. Pull the docker file and open it
+3. Pull the docker file and open it
 ```Shell
 docker pull webface260m/mfr:latest
 docker run -it -v /mnt/:/mnt/ --name mfr webface260m/mfr /bin/bash
 ```
-3. (Optional) If you do not run step 2, you can also run the following command to install the necessary packages.
+4. (Optional) If you do not run step 3, you can also run the following command to install the necessary packages.
 ```Shell
 cd $MFR_ROOT/demo
 pip install -r requirements.txt
@@ -50,7 +50,8 @@ python demo_feat.py
 ```
 accordingly, for submission to [codalab](https://competitions.codalab.org/competitions/32478).
 
-2. Participants must decide whether the value of ``input_mean`` and ``input_std`` in [``pywebface260mmfr_implement.py``](https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/main/pywebface260mmfr_implement.py) is right for their face recognition models. Generally, when the model have preprocessing steps in itself, it do not need any other operations (``input_mean = 0.0`` and ``input_std = 1.0``). Otherwise, it may be ``input_mean = 127.5`` and ``input_std = 127.5``. Participants must adjust the script accordingly.
+2. Participants must decide whether the value of ``input_mean`` and ``input_std`` in [``pywebface260mmfr_implement.py``](https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/main/pywebface260mmfr_implement.py) is right for their own face recognition models. Generally, when the model have preprocessing steps in itself, it do not need any other operations (``input_mean = 0.0`` and ``input_std = 1.0``). Otherwise, it may be ``input_mean = 127.5`` and ``input_std = 127.5``. Participants must adjust the script accordingly.
+3. Participants must compare the feature obtained by this repo with their own framework (``mxnet, pytorch``) by using one image, e.g. ``demo/0.png``, to make sure the feature are almost the same. Otherwise, there may be other issues.
 
 ### Submission Guide
 1. Participants should put all models and files into ``$MFR_ROOT/assets/``.
@@ -70,5 +71,5 @@ accordingly, for submission to [codalab](https://competitions.codalab.org/compet
 
 3 directories, 4 files
 ```
-6. Please sign-up with the real organization name. You can hide the organization name in our system if you like.  
-7. You can decide which submission to be displayed on the leaderboard.
+5. Please sign-up with the real organization name. You can hide the organization name in our system if you like.  
+6. You can decide which submission to be displayed on the leaderboard.
