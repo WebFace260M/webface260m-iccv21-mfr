@@ -34,7 +34,20 @@ pip install -r requirements.txt
 cd $MFR_ROOT/demo
 python demo_feat.py
 ```
-In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-retinaface.onnx``) and a face recognition model (``$MFR_ROOT/assets/face_reg/R18.onnx``). Participants should replace them with the models trained by themselves and modify the model name in https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/797f0f68758709323a2c77e61fe991e76bc5f156/pywebface260mmfr_implement.py#L54 and https://github.com/WebFace260M/webface260m-iccv21-mfr/blob/797f0f68758709323a2c77e61fe991e76bc5f156/pywebface260mmfr_implement.py#L61 accordingly, for submission to [codalab](https://competitions.codalab.org/competitions/32478).
+In this demo, we provide a face detection model (``$MFR_ROOT/assets/det/R50-retinaface.onnx``) and a face recognition model (``$MFR_ROOT/assets/face_reg/R18.onnx``). Participants should replace them with the models trained by themselves and modify the model name in ``pywebface260mmfr_implement.py``
+```Shell
+    def load(self, rdir):
+        det_model = os.path.join(rdir, 'det', 'R50-retinaface.onnx')
+        self.detector = face_detection.get_retinaface(det_model)
+        print('use onnx-model:', det_model)
+
+        self.detector.prepare(use_gpu=self.use_gpu)
+        max_time_cost = 1000
+
+        self.model_file = os.path.join(rdir, 'face_reg', "R18.onnx")
+        print('use onnx-model:', self.model_file)
+```
+accordingly, for submission to [codalab](https://competitions.codalab.org/competitions/32478).
 
 ### Submission Guide
 1. Participants should put all models and files into ``$MFR_ROOT/assets/``.
